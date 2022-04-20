@@ -3,13 +3,13 @@ const app = express();
 const bookModel = require('../models/book');
 
 
-app.get('/books', async (req, res) => {
-    const books = await bookModel.find({})
+app.get("/books", async (request, response) => {
+    const books = await bookModel.find({});
 
     try{
-        response.send(books)
+        response.send(books);
     } catch (error){
-        response.status(500).send(error)
+        response.status(500).send(error);
     }
 });
 
